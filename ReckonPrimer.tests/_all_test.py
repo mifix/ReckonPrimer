@@ -5,8 +5,10 @@
 print("#########################_________####################################")
 print("##### ReckonPrimer.tests/_all_test.py ################################")
 
-from _addsubsimp_test import _addsubsimp_test
-_addsubsimp_test()
+
+#from _addsubsimp_test import _addsubsimp_test
+#_addsubsimp_test()
+import _addsubsimp_test
 import _timesdiv_test
 
 print("##### ReckonPrimer.tests/_all_test.py ################################")

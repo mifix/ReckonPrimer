@@ -5,7 +5,7 @@ legend: the prompt is >
 
 run all tests:
 ~~~~~~~~~~~~~~
-> python _all-test.py
+ReckonPrimer.tests> python _all_test.py
 
 ... must finish with
 ##### ReckonPrimer.tests/_all-test.py SUCCESS ########################
@@ -38,6 +38,8 @@ all directories involved need to be in the PYTHONPATH:
 
 > export PYTHONPATH
 
+... these commands are required at the beginning of each session, unless ...
+
 organization of test-driven development:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # each module of the production code contains one class
@@ -45,6 +47,6 @@ organization of test-driven development:
 # in each directory RP.tests/dirname there is a file _dirname_test.py
 # this _dirname_test.py contains "def _dirname_test():" which executes all 
   tests in this directory
-# test modules are named modulename_test.py
-# all test classes are named TestClassName
+# test modules are named module_name_test.py
+# all test classes are named MockClassName
 # all test methods are named test_method_name
