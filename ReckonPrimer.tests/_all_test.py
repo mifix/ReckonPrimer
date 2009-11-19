@@ -1,15 +1,25 @@
 # -*- coding: utf-8 -*-
-# Activities/ReckonPrimer.tests/_all-test.py
-# (c)
+# Activities/ReckonPrimer.tests/_all_test.py
+# (c) Walther Neuper 2009
 
 print("#########################_________####################################")
 print("##### ReckonPrimer.tests/_all_test.py ################################")
 
-
-#from _addsubsimp_test import _addsubsimp_test
-#_addsubsimp_test()
-import _addsubsimp_test
-import _timesdiv_test
+import ReckonPrimerActivity
+import author
+import coach
+import collection
+import display
+import exaddsimp
+import exaddsub
+import exercise
+import exmult
+import expassten
+import extimesadd
+import extimesdiv
+import learner
+import session
+import timer
 
 print("##### ReckonPrimer.tests/_all_test.py ################################")
 print("################ SUCCESS ~~~~~~~~~####################################")

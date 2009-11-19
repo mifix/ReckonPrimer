@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
-from Exercise import Exercise
-import random
-import copy
-from functions import *
+
 import gtk
 import pygtk
 import pango
+import random
+import copy
 from sugar.graphics import style
 
-class TimesDiv(Exercise):
+from Exercise import Exercise
+from functions import *
+
+class ExTimesDiv(Exercise):
     def __init__(self, dis):
-        self.display = dis
-        self._calcs = []
+        self._title = 'template extimesdiv'
+        self._display = dis
         self._sett = {'topic'        : 'times_div',
-         'ID'           : 'times_div_01',
-         'descr'        : 'n times 2',
          'MAX'          : 100,    # maximum of calcs generated;
                                   # TODO: Generate fills up by varying input.
          'MIN'          : 10,     # minimum of calcs generated 090416WN:UNUSED
@@ -85,148 +85,148 @@ class TimesDiv(Exercise):
         """buttons for this setting, which is specific for TimesDiv"""
         self.label = gtk.Label("2")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 0, 1, 13, 14 ) 
+        self._display.settings_table.attach(self.label, 0, 1, 13, 14 ) 
         self.label.show()
         
         self.label = gtk.Label("in")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 1, 2, 13, 14 ) 
+        self._display.settings_table.attach(self.label, 1, 2, 13, 14 ) 
         self.label.show()
         
         self.label = gtk.Label("2")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 2, 3, 13, 14 ) 
+        self._display.settings_table.attach(self.label, 2, 3, 13, 14 ) 
         self.label.show()
         
         self.label = gtk.Label("=")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 3, 4, 13, 14 ) 
+        self._display.settings_table.attach(self.label, 3, 4, 13, 14 ) 
         self.label.show()
         
         self.label = gtk.Label("1")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 4, 5, 13, 14 ) 
+        self._display.settings_table.attach(self.label, 4, 5, 13, 14 ) 
         self.label.show()
         
         self.label = gtk.Label("|")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 5, 6, 13, 14 ) 
+        self._display.settings_table.attach(self.label, 5, 6, 13, 14 ) 
         self.label.show()
         
-        self.display.settings_table.resize(15, 8)
+        self._display.settings_table.resize(15, 8)
         
         self.label = gtk.Label("0")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 6, 7, 13, 14 ) 
+        self._display.settings_table.attach(self.label, 6, 7, 13, 14 ) 
         self.label.show()
         
         self.label = gtk.Label("2")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 0, 1, 12, 13 ) 
+        self._display.settings_table.attach(self.label, 0, 1, 12, 13 ) 
         self.label.show()
         
         self.label = gtk.Label(":")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 1, 2, 12, 13 ) 
+        self._display.settings_table.attach(self.label, 1, 2, 12, 13 ) 
         self.label.show()
         
         self.label = gtk.Label("2")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 2, 3, 12, 13 ) 
+        self._display.settings_table.attach(self.label, 2, 3, 12, 13 ) 
         self.label.show()
         
         self.label = gtk.Label("=")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 3, 4, 12, 13 ) 
+        self._display.settings_table.attach(self.label, 3, 4, 12, 13 ) 
         self.label.show()
         
         self.label = gtk.Label("1")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 4, 5, 12, 13 ) 
+        self._display.settings_table.attach(self.label, 4, 5, 12, 13 ) 
         self.label.show()
         
         self.label = gtk.Label("|")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 5, 6, 12, 13 ) 
+        self._display.settings_table.attach(self.label, 5, 6, 12, 13 ) 
         self.label.show()
         
         self.label = gtk.Label("0")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 6, 7, 12, 13 ) 
+        self._display.settings_table.attach(self.label, 6, 7, 12, 13 ) 
         self.label.show()
         
         self.label = gtk.Label("1")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 0, 1, 9, 10 ) 
+        self._display.settings_table.attach(self.label, 0, 1, 9, 10 ) 
         self.label.show()
         
         self.label = gtk.Label("*")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 1, 2, 9, 10 ) 
+        self._display.settings_table.attach(self.label, 1, 2, 9, 10 ) 
         self.label.show()
         
         self.label = gtk.Label("=")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 3, 4, 9, 10 ) 
+        self._display.settings_table.attach(self.label, 3, 4, 9, 10 ) 
         self.label.show()
         
         self.label = gtk.Label("2")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 4, 5, 9, 10 ) 
+        self._display.settings_table.attach(self.label, 4, 5, 9, 10 ) 
         self.label.show()
         
         self.toggle_shuffle_all = gtk.ToggleButton("@")
         self.toggle_shuffle_all_label = self.toggle_shuffle_all.get_child()
         self.toggle_shuffle_all_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_shuffle_all.connect("toggled", self.toggle_shuffle_all_callback)
-        self.display.settings_table.attach(self.toggle_shuffle_all, 2, 3, 11, 12 )
+        self._display.settings_table.attach(self.toggle_shuffle_all, 2, 3, 11, 12 )
         self.toggle_shuffle_all.show()
         
         self.toggle_shuffle_inner = gtk.ToggleButton("@")
         self.toggle_shuffle_inner_label = self.toggle_shuffle_inner.get_child()
         self.toggle_shuffle_inner_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_shuffle_inner.connect("toggled", self.toggle_shuffle_inner_callback)
-        self.display.settings_table.attach(self.toggle_shuffle_inner, 0, 1, 11, 12 )
+        self._display.settings_table.attach(self.toggle_shuffle_inner, 0, 1, 11, 12 )
         self.toggle_shuffle_inner.show()
         
         self.toggle_remainder = gtk.ToggleButton("V")
         self.toggle_remainder_label = self.toggle_remainder.get_child()
         self.toggle_remainder_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_remainder.connect("toggled", self.toggle_remainder_callback)
-        self.display.settings_table.attach(self.toggle_remainder, 5, 7, 11, 12 )
+        self._display.settings_table.attach(self.toggle_remainder, 5, 7, 11, 12 )
         self.toggle_remainder.show()
         
         self.label = gtk.Label("< - >")
         self.label.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label, 0, 3, 10, 11) 
+        self._display.settings_table.attach(self.label, 0, 3, 10, 11) 
         self.label.show()
         
         self.toggle_times = gtk.ToggleButton("<")
         self.toggle_times_label = self.toggle_times.get_child()
         self.toggle_times_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_times.connect("toggled", self.toggle_times_callback)
-        self.display.settings_table.attach(self.toggle_times, 7, 8, 9, 10 )
+        self._display.settings_table.attach(self.toggle_times, 7, 8, 9, 10 )
         self.toggle_times.show()
                 
         self.toggle_commute = gtk.ToggleButton("<")
         self.toggle_commute_label = self.toggle_commute.get_child()
         self.toggle_commute_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_commute.connect("toggled", self.toggle_commute_callback)
-        self.display.settings_table.attach(self.toggle_commute, 7, 8, 10, 11 )
+        self._display.settings_table.attach(self.toggle_commute, 7, 8, 10, 11 )
         self.toggle_commute.show()
         
         self.toggle_div = gtk.ToggleButton("<")
         self.toggle_div_label = self.toggle_div.get_child()
         self.toggle_div_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_div.connect("toggled", self.toggle_div_callback)
-        self.display.settings_table.attach(self.toggle_div, 7, 8, 12, 13 )
+        self._display.settings_table.attach(self.toggle_div, 7, 8, 12, 13 )
         self.toggle_div.show()
         
         self.toggle_in = gtk.ToggleButton("<")
         self.toggle_in_label = self.toggle_in.get_child()
         self.toggle_in_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_in.connect("toggled", self.toggle_in_callback)
-        self.display.settings_table.attach(self.toggle_in, 7, 8, 13, 14 )
+        self._display.settings_table.attach(self.toggle_in, 7, 8, 13, 14 )
         self.toggle_in.show()
         
         self.number_butts = []
@@ -236,7 +236,7 @@ class TimesDiv(Exercise):
             self.toggle_label = self.toggle.get_child()
             self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))          
             self.toggle.connect("toggled", self.toggle_number_callback, i) 
-            self.display.settings_table.attach(self.toggle, 2, 3, 11-i, 12-i)
+            self._display.settings_table.attach(self.toggle, 2, 3, 11-i, 12-i)
             self.toggle.show()
             self.number_butts.append(self.toggle)
             
@@ -284,47 +284,47 @@ class TimesDiv(Exercise):
 
     def toggle_shuffle_all_callback(self, widget):
         if widget.get_active():
-            self.display._sett['shuffle_all'] = True
+            self._display._sett['shuffle_all'] = True
             self.toggle_shuffle_inner.set_active(True)
         else:
-            self.display._sett['shuffle_all'] = False
+            self._display._sett['shuffle_all'] = False
             
     def toggle_shuffle_inner_callback(self, widget):
         if widget.get_active():
-            self.display._sett['shuffle_inner'] = True
+            self._display._sett['shuffle_inner'] = True
         else:
             if(self.toggle_shuffle_all.get_active()):   
                 widget.set_active(True)
             else:
-                self.display._sett['shuffle_inner'] = False
+                self._display._sett['shuffle_inner'] = False
         
     def toggle_number_callback(self, widget, i):
 
         if widget.get_active():
-                if(i < self.display._sett['min']):
-                    self.display._sett['min'] = i
-                    self.set_buttons(self.display._sett)
+                if(i < self._display._sett['min']):
+                    self._display._sett['min'] = i
+                    self.set_buttons(self._display._sett)
                     
-                elif( i > self.display._sett['max'] ):
-                    self.display._sett['max'] = i
-                    self.set_buttons(self.display._sett)
+                elif( i > self._display._sett['max'] ):
+                    self._display._sett['max'] = i
+                    self.set_buttons(self._display._sett)
                     
         else:
-            if( i == self.display._sett['min'] ):
-                if( self.display._sett['min'] == self.display._sett['max'] ):
+            if( i == self._display._sett['min'] ):
+                if( self._display._sett['min'] == self._display._sett['max'] ):
                     widget.set_active(True)
                 else:           
-                    self.display._sett['min'] = i+1
-                    self.set_buttons(self.display._sett)
+                    self._display._sett['min'] = i+1
+                    self.set_buttons(self._display._sett)
       
-            elif( i == self.display._sett['max'] ):
-                if( self.display._sett['min'] == self.display._sett['max'] ):
+            elif( i == self._display._sett['max'] ):
+                if( self._display._sett['min'] == self._display._sett['max'] ):
                     widget.set_active(True)
                 else:           
-                    self.display._sett['max'] = i-1
+                    self._display._sett['max'] = i-1
                 
          
-                self.set_buttons(self.display._sett)
+                self.set_buttons(self._display._sett)
                 
             else:
                 widget.set_active(True)
@@ -332,45 +332,45 @@ class TimesDiv(Exercise):
             
     def toggle_times_callback(self, widget):
         if widget.get_active():
-            self.display._sett['*'] = True
+            self._display._sett['*'] = True
         else:
             if( self.toggle_commute.get_active() or self.toggle_in.get_active() or self.toggle_div.get_active() ):
-                self.display._sett['*'] = False
+                self._display._sett['*'] = False
             else:
                 widget.set_active(True)
             
     def toggle_commute_callback(self, widget):
         if widget.get_active():
-            self.display._sett['*commute'] = True
+            self._display._sett['*commute'] = True
         else:
             if( self.toggle_times.get_active() or self.toggle_in.get_active() or self.toggle_div.get_active() ):
-                self.display._sett['*commute'] = False
+                self._display._sett['*commute'] = False
             else:
                 widget.set_active(True)
                 
     def toggle_div_callback(self, widget):
         if widget.get_active():
-            self.display._sett[':'] = True
+            self._display._sett[':'] = True
         else:
             if( self.toggle_times.get_active() or self.toggle_in.get_active() or self.toggle_commute.get_active() ):
-                self.display._sett[':'] = False
+                self._display._sett[':'] = False
             else:
                 widget.set_active(True)
                 
     def toggle_in_callback(self, widget):
         if widget.get_active():
-            self.display._sett['in'] = True
+            self._display._sett['in'] = True
         else:
             if( self.toggle_times.get_active() or self.toggle_commute.get_active() or self.toggle_div.get_active() ):
-                self.display._sett['in'] = False
+                self._display._sett['in'] = False
             else:
                 widget.set_active(True)
                 
     def toggle_remainder_callback(self, widget):
         if widget.get_active():
-            self.display._sett['remainder'] = True
+            self._display._sett['remainder'] = True
         else:
-            self.display._sett['remainder'] = False
+            self._display._sett['remainder'] = False
         
     ##### end of public methods ############################################
 

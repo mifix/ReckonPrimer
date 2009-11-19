@@ -6,9 +6,9 @@ import pickle
 from settings import Settings
 from display import Display
 from Exercise import Exercise
-from addsubsimp import AddSubSimp
-from passten import PassTen
-from timesdiv import TimesDiv
+from exaddsimp import ExAddSimp
+from expassten import ExPassTen
+from extimesdiv import ExTimesDiv
 
 class Coach:
     """determines Settings which might come from Display.
@@ -38,9 +38,9 @@ class Coach:
         """TODO version preliminary until exs are stored on disk"""
 
         ['addsub_simp', 'passten', 'times_div']
-        _ex1 = AddSubSimp(self._dis)
-        _ex2 = PassTen(self._dis)
-        _ex3 = TimesDiv(self._dis)
+        _ex1 = ExAddSimp(self._dis)
+        _ex2 = ExPassTen(self._dis)
+        _ex3 = ExTimesDiv(self._dis)
         return[_ex1, _ex2, _ex3]
 
     def _update_exs(self, ex):

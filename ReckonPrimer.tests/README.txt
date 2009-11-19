@@ -1,6 +1,9 @@
 Activities/ReckonPrimer.tests/README.txt
 WN091114
 
+http://git.sugarlabs.org/projects/rp/ 
+
+
 legend: the prompt is >
 
 run all tests:
@@ -33,6 +36,8 @@ all directories involved need to be in the PYTHONPATH:
 # /home/neuper/Activities/ReckonPrimer.tests/timer:
 # /home/neuper/Activities/ReckonPrimer.tests/timesdiv:
 # which is ....
+
+> PYTHONPATH=$PYTHONPATH:/home/neuper/Activities/ReckonPrimer.activity
 
 > PYTHONPATH=$PYTHONPATH:/home/neuper/Activities/ReckonPrimer.activity:/home/neuper/Activities/ReckonPrimer.tests:/home/neuper/Activities/ReckonPrimer.tests/ReckonPrimerActivity:/home/neuper/Activities/ReckonPrimer.tests/addsubsimp:/home/neuper/Activities/ReckonPrimer.tests/author:/home/neuper/Activities/ReckonPrimer.tests/coach:/home/neuper/Activities/ReckonPrimer.tests/collection:/home/neuper/Activities/ReckonPrimer.tests/display:/home/neuper/Activities/ReckonPrimer.tests/exercise:/home/neuper/Activities/ReckonPrimer.tests/learner:/home/neuper/Activities/ReckonPrimer.tests/passten:/home/neuper/Activities/ReckonPrimer.tests/session:/home/neuper/Activities/ReckonPrimer.tests/timer:/home/neuper/Activities/ReckonPrimer.tests/timesdiv
 

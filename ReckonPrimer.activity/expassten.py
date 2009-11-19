@@ -1,4 +1,4 @@
-# -*- coding: UTF8 -*-
+# -*- coding: utf-8 -*-
 from Exercise import Exercise
 import random
 import copy
@@ -8,10 +8,10 @@ import pygtk
 import pango
 from sugar.graphics import style
 
-class PassTen(Exercise):
+class ExPassTen(Exercise):
     def __init__(self, dis):
-        self.display = dis
-        self._calcs = []
+        self._title = 'template expassten'
+        self._display = dis
         self._sett = {'topic'        : 'passten',
          'ID'           : 'passten_01', # for 
          'descr'        : 'subtractions passing 10', 
@@ -233,79 +233,79 @@ class PassTen(Exercise):
         self.toggle_label = self.toggle_plus.get_child()
         self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_plus.connect("toggled", self.toggle_plus_callback)
-        self.display.settings_table.attach(self.toggle_plus, 1, 2, 10, 11 )
+        self._display.settings_table.attach(self.toggle_plus, 1, 2, 10, 11 )
         self.toggle_plus.show()
         
         self.toggle_minus = gtk.ToggleButton("-")
         self.toggle_label = self.toggle_minus.get_child()
         self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_minus.connect("toggled", self.toggle_minus_callback)
-        self.display.settings_table.attach(self.toggle_minus, 1, 2, 9, 10 )
+        self._display.settings_table.attach(self.toggle_minus, 1, 2, 9, 10 )
         self.toggle_minus.show()
         
         self.label0 = gtk.Label("3")
         self.label0.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label0, 2, 3, 10, 11 ) 
+        self._display.settings_table.attach(self.label0, 2, 3, 10, 11 ) 
         self.label0.show()
         
         self.label1 = gtk.Label("=")
         self.label1.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label1, 3, 4, 10, 11 ) 
+        self._display.settings_table.attach(self.label1, 3, 4, 10, 11 ) 
         self.label1.show()
         
         self.label2 = gtk.Label("12")
         self.label2.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label2, 4, 5, 10, 11 ) 
+        self._display.settings_table.attach(self.label2, 4, 5, 10, 11 ) 
         self.label2.show()
         
         self.label3 = gtk.Label("1 + 2")
         self.label3.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label3, 2, 3, 11, 12 ) 
+        self._display.settings_table.attach(self.label3, 2, 3, 11, 12 ) 
         self.label3.show()
                 
-        self.label6 = gtk.Label(self.display._sett['MAX'])
+        self.label6 = gtk.Label(self._display._sett['MAX'])
         self.label6.modify_font(pango.FontDescription("sans 12"))
-        self.display.settings_table.attach(self.label6, 5, 6, 1, 2 ) 
+        self._display.settings_table.attach(self.label6, 5, 6, 1, 2 ) 
         self.label6.show()
         
-        #self.label7 = gtk.Label(self.display._sess._gen.count((self.display._key, self.display._sett)))
+        #self.label7 = gtk.Label(self._display._sess._gen.count((self._display._key, self._display._sett)))
         #self.label7.modify_font(pango.FontDescription("sans 12"))
-        #self.display.settings_table.attach(self.label7, 5, 6, 2, 3 ) 
+        #self._display.settings_table.attach(self.label7, 5, 6, 2, 3 ) 
         #self.label7.show()
         
         self.toggle_newline = gtk.ToggleButton("<")
         self.toggle_label = self.toggle_newline.get_child()
         self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_newline.connect("toggled", self.toggle_newline_callback)
-        self.display.settings_table.attach(self.toggle_newline, 5, 6, 11, 12)
+        self._display.settings_table.attach(self.toggle_newline, 5, 6, 11, 12)
         self.toggle_newline.show()
         
         self.toggle_shuffle_all = gtk.ToggleButton("@")
         self.toggle_shuffle_all_label = self.toggle_shuffle_all.get_child()
         self.toggle_shuffle_all_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_shuffle_all.connect("toggled", self.toggle_shuffle_all_callback)
-        self.display.settings_table.attach(self.toggle_shuffle_all, 0, 1, 13, 14 )
+        self._display.settings_table.attach(self.toggle_shuffle_all, 0, 1, 13, 14 )
         self.toggle_shuffle_all.show()
         
         self.toggle_shuffle_inner = gtk.ToggleButton("@")
         self.toggle_shuffle_inner_label = self.toggle_shuffle_inner.get_child()
         self.toggle_shuffle_inner_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_shuffle_inner.connect("toggled", self.toggle_shuffle_inner_callback)
-        self.display.settings_table.attach(self.toggle_shuffle_inner, 2, 3, 13, 14 )
+        self._display.settings_table.attach(self.toggle_shuffle_inner, 2, 3, 13, 14 )
         self.toggle_shuffle_inner.show()
         
         self.toggle_pos3 = gtk.ToggleButton("--")
         self.toggle_label = self.toggle_pos3.get_child()
         self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_pos3.connect("toggled", self.toggle_pos3_callback)
-        self.display.settings_table.attach(self.toggle_pos3, 2, 3, 12, 13 )
+        self._display.settings_table.attach(self.toggle_pos3, 2, 3, 12, 13 )
         self.toggle_pos3.show()
         
         self.toggle_pos5 = gtk.ToggleButton("--")
         self.toggle_label = self.toggle_pos5.get_child()
         self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
         self.toggle_pos5.connect("toggled", self.toggle_pos5_callback)
-        self.display.settings_table.attach(self.toggle_pos5, 4, 5, 12, 13 )
+        self._display.settings_table.attach(self.toggle_pos5, 4, 5, 12, 13 )
         self.toggle_pos5.show()
         
         self.number_butts = []
@@ -315,7 +315,7 @@ class PassTen(Exercise):
             self.toggle_label = self.toggle.get_child()
             self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))            
             self.toggle.connect("toggled", self.toggle_number_callback, i) 
-            self.display.settings_table.attach(self.toggle, 0, 1, 1+i, 2+i)
+            self._display.settings_table.attach(self.toggle, 0, 1, 1+i, 2+i)
             self.toggle.show()
             self.number_butts.append(self.toggle)
 
@@ -362,92 +362,92 @@ class PassTen(Exercise):
 
     def toggle_newline_callback(self, widget):
         if widget.get_active():
-            self.display._sett['newline'] = True
+            self._display._sett['newline'] = True
         else:
-            self.display._sett['newline'] = False
+            self._display._sett['newline'] = False
             
             
     def toggle_shuffle_all_callback(self, widget):
         if widget.get_active():
-            self.display._sett['shuffle_all'] = True
+            self._display._sett['shuffle_all'] = True
             self.toggle_shuffle_inner.set_active(True)
         else:
-            self.display._sett['shuffle_all'] = False
+            self._display._sett['shuffle_all'] = False
             
     def toggle_shuffle_inner_callback(self, widget):
         if widget.get_active():
-            self.display._sett['shuffle_inner'] = True
+            self._display._sett['shuffle_inner'] = True
         else:
             if(self.toggle_shuffle_all.get_active()):   
                 widget.set_active(True)
             else:
-                self.display._sett['shuffle_inner'] = False
+                self._display._sett['shuffle_inner'] = False
                 
     def toggle_pos3_callback(self, widget):
         if widget.get_active():
-            self.display._sett['input'] = list(set(self.display._sett['input']) | set([3]))
+            self._display._sett['input'] = list(set(self._display._sett['input']) | set([3]))
         else:
             if(self.toggle_pos5.get_active()):
-                self.display._sett['input'] = list(set(self.display._sett['input']) - set([3]))
+                self._display._sett['input'] = list(set(self._display._sett['input']) - set([3]))
             else:
                 widget.set_active(True)
             
     def toggle_pos5_callback(self, widget):
         if widget.get_active():
-            self.display._sett['input'] = list(set(self.display._sett['input']) | set([5]))
+            self._display._sett['input'] = list(set(self._display._sett['input']) | set([5]))
         else:
             if(self.toggle_pos3.get_active()):
-                self.display._sett['input'] = list(set(self.display._sett['input']) - set([5]))
+                self._display._sett['input'] = list(set(self._display._sett['input']) - set([5]))
             else:
                 widget.set_active(True)
                 
     def toggle_plus_callback(self, widget):
         if widget.get_active():
-            self.display._sett['+'] = True
+            self._display._sett['+'] = True
  
         else:
             if( self.toggle_minus.get_active() ):
-                self.display._sett['+'] = False
+                self._display._sett['+'] = False
             else:
                 widget.set_active(True) 
             
     def toggle_minus_callback(self, widget):
         if widget.get_active():
-            self.display._sett['-'] = True  
+            self._display._sett['-'] = True  
         else:
             if( self.toggle_plus.get_active() ):
-                self.display._sett['-'] = False
+                self._display._sett['-'] = False
             else:
                widget.set_active(True)
                
     def toggle_number_callback(self, widget, i):
 
         if widget.get_active():
-            if(i < self.display._sett['min']):
-                self.display._sett['min'] = i
-                self.set_buttons(self.display._sett)
+            if(i < self._display._sett['min']):
+                self._display._sett['min'] = i
+                self.set_buttons(self._display._sett)
                     
 
-            elif( i > self.display._sett['max'] ):
-                self.display._sett['max'] = i
-                self.set_buttons(self.display._sett)
+            elif( i > self._display._sett['max'] ):
+                self._display._sett['max'] = i
+                self.set_buttons(self._display._sett)
                     
         else:
-            if( i == self.display._sett['min'] ):
-                if( self.display._sett['min'] == self.display._sett['max'] ):
+            if( i == self._display._sett['min'] ):
+                if( self._display._sett['min'] == self._display._sett['max'] ):
                     widget.set_active(True)
                 else:           
-                    self.display._sett['min'] = i+1
+                    self._display._sett['min'] = i+1
     
-                self.set_buttons(self.display._sett)
+                self.set_buttons(self._display._sett)
                 
-            elif( i == self.display._sett['max'] ):
-                if( self.display._sett['min'] == self.display._sett['max'] ):
+            elif( i == self._display._sett['max'] ):
+                if( self._display._sett['min'] == self._display._sett['max'] ):
                     widget.set_active(True)
                 else:           
-                    self.display._sett['max'] = i-1                 
+                    self._display._sett['max'] = i-1                 
                     
-                self.set_buttons(self.display._sett)
+                self.set_buttons(self._display._sett)
                 
             else:
                 widget.set_active(True)
