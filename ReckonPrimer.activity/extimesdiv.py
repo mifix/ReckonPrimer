@@ -15,6 +15,7 @@ class ExTimesDiv(Exercise):
         self._title = 'template extimesdiv'
         self._display = dis
         self._sett = {'topic'        : 'times_div',
+         'calclines'    : 1,      # no. of lines for calc to be input.
          'MAX'          : 100,    # maximum of calcs generated;
                                   # TODO: Generate fills up by varying input.
          'MIN'          : 10,     # minimum of calcs generated 090416WN:UNUSED

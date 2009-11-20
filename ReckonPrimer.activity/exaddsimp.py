@@ -15,7 +15,8 @@ class ExAddSimp(Exercise):
         self._title = 'template exaddsimp'
         self._display = dis
         self._sett = {'topic'  : 'addsub_simp',
-         'MAX'    : 50,     # maximum of calcs generated;
+         'calclines': 1,    # no. of lines for calc to be input.
+         'MAX'    : 50,     # maximum of calcs generated.
                             # Generate fills up by varying input.
          'MIN'    : 20,     # minimum of calcs generated UNUSED
          'min'    : 0,      # minimum in size of a number in a calc

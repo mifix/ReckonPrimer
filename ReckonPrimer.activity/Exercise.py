@@ -21,9 +21,9 @@ class Exercise:
         Exercise has been done, what errors have been made TODO """
         self._eval = None
         """ The settings determine the generation of calculations.
-        The fields of the settings are determined by the 'topic';
-        the values of the settings are different for different Exercises;
-        the settings may even be updated by the user."""
+        The fields of the settings are determined by self._sett['topic'];
+        the values of the settings are different for different Exercises.
+        self._sett['calclines'] determines the # of lines in a calculation."""
         self._sett = None
         """ Calculations are generated according to the settings. """
         self._calcs = None

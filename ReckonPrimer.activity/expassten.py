@@ -13,8 +13,7 @@ class ExPassTen(Exercise):
         self._title = 'template expassten'
         self._display = dis
         self._sett = {'topic'        : 'passten',
-         'ID'           : 'passten_01', # for 
-         'descr'        : 'subtractions passing 10', 
+         'calclines'    : 1,      # or 2 iff 'newline' : True.
          'MAX'          : 150,    # maximum of calcs generated;
                                   # TODO: Generate fills up by varying input.
          'MIN'          : 10,     # minimum of calcs generated 090416WN:UNUSED
