@@ -47,9 +47,10 @@ class ExPassTen(Exercise):
 
     def format(self, (cs, ms, linepos)):
         """format the calc for display, prepare overlays for input"""
-        if ms == None:
+        #print('in ExPassTen.format: (cs, ms, linepos)=', (cs, ms, linepos))
+        if ms is None:
             #@print('in Display.format_passten 1: calc=', (cs, linepos)) #@
-            return Exercise.format_addsub_simp((cs, linepos))
+            return self.format_addsub_simp((cs, linepos))
         elif contain(cs, '+'):
             #@print('in Display.format_passten 2: calc=', (cs, ms, linepos))#@
             if linepos == 1: ################################## unused !
@@ -207,6 +208,7 @@ class ExPassTen(Exercise):
         
     def generate_calcs(self):
         _dic = self._sett
+        print("in ExPassTen.generate_calcs: _dic=", _dic)
         _calcs = []
         _c = []
         # generate all calcs

@@ -64,7 +64,7 @@ class ExTimesDiv(Exercise):
         """generate all calculations between min..max given in dict"""
         #print('in Generate.times_div, (min, max)=',(_dic['min'], _dic['max'], _dic['remainder']))
         _dic = self._sett
-        print('in Generate.times_div, _dic=', _dic)
+        #print('in Generate.times_div, _dic=', _dic)
         _calcs = []
         if _dic['*']:
             _calcs.extend(self.tim_div(_dic['min'], _dic['max'], '*', _dic['shuffle_inner'], _dic['remainder']))

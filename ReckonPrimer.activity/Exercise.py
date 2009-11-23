@@ -38,7 +38,7 @@ class Exercise:
         TODO: use self._sett['ID'] instead as soon as exs are stored."""
         pass
 
-    def update_setting(self, sett): ####??????????
+    def update_setting(self, sett):
         """The settings may be changed by the user. This method
         is inherited and thus not contained in subclasses."""
         ####self._sett = sett
@@ -49,7 +49,19 @@ class Exercise:
         coming through the net (TODO cooperative games, etc)"""
         pass
 
-    def generate_calcs(self):
+    def format_addsub_simp(self, (calc, linepos)):
+        """ Format the calc for display, prepare overlays for input.
+        Used within several subclasses. """
+        #@print('in Display.format_addsub_simp: calc=', (calc, linepos))#@
+        _ccs = collect_digits(calc)
+        print('in Exercise.format_addsub_simp: _ccs=',_ccs )
+        _l0 = make_line(_ccs, linepos)
+        _ip = make_input(_ccs, linepos)
+        #@print('in Display.format_addsub_simp: return=', ([_l0], _ip)) #@
+        return ([_l0], _ip)
+#return ([[' ', '1', '0', ' ', '-', ' ', '7', ' ', '=', ' ', '_', ' ']], [(0, 10, '3', ' 10 - 7 = _ ', ' 10 - 7 = 3 ', [' ', '1', '0', ' ', '-', ' ', '7', ' ', '=', ' ', '3', ' '])])
+
+    def generate_calcs(self): #WN091123 make private !!!
         """TODO"""
         pass
 
@@ -65,20 +77,3 @@ class Exercise:
     def set_buttons(self, sett):
         """XXX"""
         pass
-    
-
-
-
-
-
-
-    def format_addsub_simp(self, (calc, linepos)):
-        """format the calc for display, prepare overlays for input"""
-        #@print('in Display.format_addsub_simp: calc=', (calc, linepos))#@
-        _ccs = collect_digits(calc)
-        print('in Display.format_addsub_simp: _ccs=',_ccs )
-        _l0 = make_line(_ccs, linepos)
-        _ip = make_input(_ccs, linepos)
-        #@print('in Display.format_addsub_simp: return=', ([_l0], _ip)) #@
-        return ([_l0], _ip)
-#return ([[' ', '1', '0', ' ', '-', ' ', '7', ' ', '=', ' ', '_', ' ']], [(0, 10, '3', ' 10 - 7 = _ ', ' 10 - 7 = 3 ', [' ', '1', '0', ' ', '-', ' ', '7', ' ', '=', ' ', '3', ' '])])
