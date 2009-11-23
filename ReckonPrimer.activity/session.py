@@ -31,7 +31,7 @@ class Session:
         #print('in Session.notify: msg=,data=', msg, data)
         if msg == 'setting-done': # from Coach
             self._ex = data
-            self._calcs = data.generate_calcs()
+            self._calcs = data._generate_calcs()
             self._key = data.get_topic()
             (self._calcs).reverse()
             _calc = (self._calcs).pop()

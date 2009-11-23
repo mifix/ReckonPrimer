@@ -34,17 +34,17 @@ class ExAddSimp(Exercise):
          'cut-max': True    # cut set of all calcs down to MAX
         }
 
-    def get_setting(self):
-        return self._sett
+#    def get_setting(self):
+#        return self._sett
+#
+#    def get_topic(self):
+#        return (self._sett)['topic']
+#
+#    def update_setting(self, sett):
+#        self._sett = sett
+#        self._calcs = self._generate_calcs()
 
-    def get_topic(self):
-        return (self._sett)['topic']
-
-    def update_setting(self, sett):
-        self._calcs = self.generate_calcs()
-        self._sett = sett
-
-    def generate_calcs(self):
+    def _generate_calcs(self):
         _dic = self._sett
         _calcs = []
         if _dic['+']: # '+' or '-' are True
@@ -89,10 +89,10 @@ class ExAddSimp(Exercise):
         #[(0, 10, '3', ' 10 - 7 = _ ', ' 10 - 7 = 3 ',
         #[' ', '1', '0', ' ', '-', ' ', '7', ' ', '=', ' ', '3', ' '])])
 
-    def count(self):
-        """TODO"""
-        print('in Display.count: len=', len(self._calcs))
-        return len(self._calcs)
+#    def count(self):
+#        """TODO"""
+#        print('in Display.count: len=', len(self._calcs))
+#        return len(self._calcs)
 
     def define_buttons(self):
         self.toggle_shuffle = gtk.ToggleButton("@")

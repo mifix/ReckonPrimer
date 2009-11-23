@@ -33,15 +33,15 @@ class ExTimesDiv(Exercise):
          'cut-max'      : True   # cut set of all calcs down to MAX
         }
 
-    def get_setting(self):
-        return self._sett
-
-    def get_topic(self):
-        return (self._sett)['topic']
-
-    def update_setting(self, sett):
-        self._calcs = self.generate_calcs()
-        self._sett = sett
+#    def get_setting(self):
+#        return self._sett
+#
+#    def get_topic(self):
+#        return (self._sett)['topic']
+#
+#    def update_setting(self, sett):
+#        self._sett = sett
+#        self._calcs = self._generate_calcs()
 
     def format(self, (calc, linepos)):
         """format the calc for display, prepare overlays for input"""
@@ -60,7 +60,7 @@ class ExTimesDiv(Exercise):
         #print('in Display.format_times_div: return=', ([_l0], _ip)) #@
         return ([_l0], _ip)
 
-    def generate_calcs(self):
+    def _generate_calcs(self):
         """generate all calculations between min..max given in dict"""
         #print('in Generate.times_div, (min, max)=',(_dic['min'], _dic['max'], _dic['remainder']))
         _dic = self._sett
@@ -78,9 +78,9 @@ class ExTimesDiv(Exercise):
             random.shuffle(_calcs)
         return _calcs
 
-    def count(self):
-        """TODO"""
-        return len(self._calcs)
+#    def count(self):
+#        """TODO"""
+#        return len(self._calcs)
 
     def define_buttons(self):
         """buttons for this setting, which is specific for TimesDiv"""

@@ -35,15 +35,15 @@ class ExPassTen(Exercise):
          'cut-max'      : True   # cut set of all calcs down to MAX
         }
     
-    def get_setting(self):
-        return self._sett
+#    def get_setting(self):
+#        return self._sett
 
-    def get_topic(self):
-        return (self._sett)['topic']
+#    def get_topic(self):
+#        return (self._sett)['topic']
 
-    def update_setting(self, sett):
-        self._calcs = self.generate_calcs()
-        self._sett = sett
+#    def update_setting(self, sett):
+#        self._sett = sett
+#        self._calcs = self._generate_calcs()
 
     def format(self, (cs, ms, linepos)):
         """format the calc for display, prepare overlays for input"""
@@ -206,9 +206,9 @@ class ExPassTen(Exercise):
                 print('in Display.format_passten: not exists linepos=', linepos)
                 #TODO exit, programmer mode
         
-    def generate_calcs(self):
+    def _generate_calcs(self):
         _dic = self._sett
-        print("in ExPassTen.generate_calcs: _dic=", _dic)
+        #print("in ExPassTen._generate_calcs: _dic=", _dic)
         _calcs = []
         _c = []
         # generate all calcs
@@ -224,12 +224,12 @@ class ExPassTen(Exercise):
             random.shuffle(_calcs)   
         return _calcs
 
-    def count(self):
-        """TODO"""
-        return len(self._calcs)
+#    def count(self):
+#        """TODO"""
+#        return len(self._calcs)
 
     def define_buttons(self):
-    
+        """ See comment in Exercies.define_buttons. """    
         self.toggle_plus = gtk.ToggleButton("+")
         self.toggle_label = self.toggle_plus.get_child()
         self.toggle_label.modify_font(pango.FontDescription("sans %d" % style.zoom(12)))
@@ -321,6 +321,7 @@ class ExPassTen(Exercise):
             self.number_butts.append(self.toggle)
 
     def set_buttons(self, sett):
+        """ See comment in Exercies.set_buttons. """
         for i in range(sett['min'],sett['max']+1):
             self.number_butts[i-1].set_active(True)
             
