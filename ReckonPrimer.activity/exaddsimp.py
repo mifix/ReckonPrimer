@@ -41,7 +41,8 @@ class ExAddSimp(Exercise):
         _dic = self._sett
         _calcs = []
         if _dic['+']: # '+' or '-' are True
-            _c = self._alladd(7,7, _dic['min'], _dic['max'])
+            #_c = self._alladd(7,7, _dic['min'], _dic['max'])
+            _c = self._alladd(_dic['min'], _dic['max'])
             if _dic['_+_=_']: # '_+_=_' or '_=_+_' are True
                 # choose 1 actual position for input
                 _cc = [(c, random.choice(_dic['input='])) for c in _c]
@@ -440,14 +441,15 @@ class ExAddSimp(Exercise):
                     self._display._sett['=input'] = list(set(self._display._sett['=input']) - set([5]))
 
     ##### end of public methods ############################################
-    def _alladd(self, min10, max10, min, max):
+    #def _alladd(self, min10, max10, min, max):
+    def _alladd(self, min, max):
         """generate all calcs for +"""
         _adds = []
         for _i in range(min, max +1):
             for _j in range(0, _i +1):
                 print("in Generate._alladd i= ",_i,"  j= ", _j)
-                _c = [to_str_99(min10), to_str_99(_j),'+',to_str_99(_i-_j),'=',
-                      to_str_99(min10), to_str_99(_i)]
+                #_c = [to_str_99(min10), to_str_99(_j),'+',to_str_99(_i-_j),'=',to_str_99(min10), to_str_99(_i)]
+                _c = [to_str_99(_j),'+',to_str_99(_i-_j),'=',to_str_99(_i)]
                 _c = flatten(_c)
                 _c = strip(_c, '#')
                 _adds.append(_c)

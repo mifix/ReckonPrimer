@@ -34,17 +34,8 @@ class ExPassTen(Exercise):
          'shuffle_inner': False,   # shuffle only 1st (inner) iteration
          'cut-max'      : True   # cut set of all calcs down to MAX
         }
+        self._calcs = self._generate_calcs()
     
-#    def get_setting(self):
-#        return self._sett
-
-#    def get_topic(self):
-#        return (self._sett)['topic']
-
-#    def update_setting(self, sett):
-#        self._sett = sett
-#        self._calcs = self._generate_calcs()
-
     def format(self, (cs, ms, linepos)):
         """format the calc for display, prepare overlays for input"""
         #print('in ExPassTen.format: (cs, ms, linepos)=', (cs, ms, linepos))
@@ -223,10 +214,6 @@ class ExPassTen(Exercise):
         if _dic['shuffle_all']:
             random.shuffle(_calcs)   
         return _calcs
-
-#    def count(self):
-#        """TODO"""
-#        return len(self._calcs)
 
     def define_buttons(self):
         """ See comment in Exercies.define_buttons. """    

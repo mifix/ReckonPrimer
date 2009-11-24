@@ -3,7 +3,7 @@ name = ReckonPrimer
 bundle_id = org.laptop.ReckonPrimerActivity
 class = ReckonPrimerActivity.ReckonPrimerActivity
 icon = activity-reckonprimer
-activity_version = 5
+activity_version = 6
 host_version = 1
 show_launcher = yes
 

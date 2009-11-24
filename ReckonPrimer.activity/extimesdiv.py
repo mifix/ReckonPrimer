@@ -32,16 +32,7 @@ class ExTimesDiv(Exercise):
          'shuffle_inner': True,   # shuffle only 1st (inner) iteration
          'cut-max'      : True   # cut set of all calcs down to MAX
         }
-
-#    def get_setting(self):
-#        return self._sett
-#
-#    def get_topic(self):
-#        return (self._sett)['topic']
-#
-#    def update_setting(self, sett):
-#        self._sett = sett
-#        self._calcs = self._generate_calcs()
+        self._calcs = self._generate_calcs()
 
     def format(self, (calc, linepos)):
         """format the calc for display, prepare overlays for input"""
