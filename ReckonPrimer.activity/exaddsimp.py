@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+#(c) Julia Schönhart
+#(c) Daniela Zierler
 
 import gtk
 import pygtk
@@ -20,10 +22,10 @@ class ExAddSimp(Exercise):
                             # Generate fills up by varying input.
          'MIN'    : 20,     # minimum of calcs generated UNUSED
          'min'    : 0,      # minimum in size of a number in a calc
-         'max'    : 5,      # maximum  in size of a number in a calc
+         'max'    : 1,      # maximum  in size of a number in a calc
                             # 0 <= min <= max <= 10
          '+'      : True,   # make all additions min..max
-         '-'      : True,   # make all subtactions min..max
+         '-'      : False,   # make all subtactions min..max
          '_+_=_'  : True,   # = is _right_ from operator, e.g. 1+2=3
          'input=' : [1,3,5],# list of positions in calc: 1 | 3 | 5
                             # where input is possible;
@@ -33,22 +35,13 @@ class ExAddSimp(Exercise):
          'shuffle': True,   # shuffle _all_ the calcs
          'cut-max': True    # cut set of all calcs down to MAX
         }
-
-#    def get_setting(self):
-#        return self._sett
-#
-#    def get_topic(self):
-#        return (self._sett)['topic']
-#
-#    def update_setting(self, sett):
-#        self._sett = sett
-#        self._calcs = self._generate_calcs()
+        self._calcs = self._generate_calcs()
 
     def _generate_calcs(self):
         _dic = self._sett
         _calcs = []
         if _dic['+']: # '+' or '-' are True
-            _c = self._alladd(_dic['min'], _dic['max'])
+            _c = self._alladd(7,7, _dic['min'], _dic['max'])
             if _dic['_+_=_']: # '_+_=_' or '_=_+_' are True
                 # choose 1 actual position for input
                 _cc = [(c, random.choice(_dic['input='])) for c in _c]
@@ -447,17 +440,18 @@ class ExAddSimp(Exercise):
                     self._display._sett['=input'] = list(set(self._display._sett['=input']) - set([5]))
 
     ##### end of public methods ############################################
-    def _alladd(self, min, max):
+    def _alladd(self, min10, max10, min, max):
         """generate all calcs for +"""
         _adds = []
         for _i in range(min, max +1):
             for _j in range(0, _i +1):
-                #print("in Generate._alladd i= ",_i,"  j= ", _j)
-                _c = [to_str_99(_j),'+',to_str_99(_i-_j),'=',to_str_99(_i)]
+                print("in Generate._alladd i= ",_i,"  j= ", _j)
+                _c = [to_str_99(min10), to_str_99(_j),'+',to_str_99(_i-_j),'=',
+                      to_str_99(min10), to_str_99(_i)]
                 _c = flatten(_c)
                 _c = strip(_c, '#')
                 _adds.append(_c)
-                #print("in Generate._alladd adds= ", _adds)
+                print("in Generate._alladd adds= ", _adds)
         return _adds
 
     def _allsub(self, min, max):
