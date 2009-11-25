@@ -1,4 +1,4 @@
-# -*- coding: UTF8 -*-
+# -*- coding: utf-8 -*-
 """the module for functions of reckonprimer.py.
 placed in reconprimer.py caused recursive import."""
 import copy
@@ -295,16 +295,17 @@ def strip(chars, c):
 #['1', '2', '3', '4']
 
 def to_str_99(i):
-    """convert a 2-digit number to a list of 2 characters;
-    a leading 0 is displayed by #"""
-    _10, _1 = divmod(i, 10)
-    if _10 == 0:
-        _10 = '#' #leading 0 can be removed by strip
-    return [str(_10), str(_1)]
-#print(to_str_99(98))
-#['9', '8']
-#print(to_str_99(9))
-#['#', '9']
+    """ Convert a number to their list of digits (as characters). """
+    _digs = []
+    _lead, _dig = divmod(i, 10)
+    _digs.append(str(_dig))
+    while _lead > 9:
+        _lead, _dig = divmod(_lead, 10)
+        _digs.append(str(_dig))
+    if _lead > 0:
+        _digs.append(str(_lead))
+    _digs.reverse()
+    return _digs
 
 def flatten(ls):
     """flatten a list of lists; only one level"""

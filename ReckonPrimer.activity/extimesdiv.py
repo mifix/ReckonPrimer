@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# (c) Martin Neppel 2009
 
 import gtk
 import pygtk
@@ -391,8 +392,9 @@ class ExTimesDiv(Exercise):
                     _calcs.append((_c, 5))
             else:
                 for _i in range(1,11):
-                    #print('in Generate.tim_div, (j,i)=',(_j, _i))
+                    print('in Generate.tim_div, (j,i)=',(_j, _i))
                     if dic == '*':
+                        #_c = [to_str_99(_i),'*',str(_j*10),'=',to_str_99(_i*_j*10)]
                         _c = [to_str_99(_i),'*',str(_j),'=',to_str_99(_i*_j)]
                     elif dic == '*commute':
                         _c = [str(_j),'*',to_str_99(_i),'=',to_str_99(_i*_j)]
