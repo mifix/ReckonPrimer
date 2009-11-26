@@ -1,0 +1,21 @@
+ReckonPrimer is an XO activity covering introduction and exercising of the four basic arithmetic
+operations. The pedagogical structure follows from long-lasting experiences in didactics of primary
+education at Austrian schools. The software will be developed under the internationalization and
+localization policies suggested by Sugar Labs. In particular, local variants of operations (eg.
+division in English speaking countries versus division in German speaking countries etc) will be
+respected.
+
+The software establishes elaborated sequences of learning situations, leading from simple calculations
+by heart to the final operations as written by hand. All e-learning situations are supported by
+immediate feedback. Summative assessment enables allows coaching (even in distance learning) and
+advice on how to proceed in the sequence of learning situations. There will be a clear-cut interface
+to diagnosis and special treatment for dyscalculia.
+
+The mode of exercises can be chosen as biased towards self-monitoring (the learner knows her or his
+position in the learning sequence), towards competition, towards cooperation or games. Cooperative and
+game-oriented modes address international teams, where each participant is represented by his or her
+name, the nationality and possibly by his or her mother tongue (see below).
+
+ReckonPrimer allows to combine early language learning with all the exercises implemented: the numbers
+involved in the exercises are the same all over the world, and the software relates the numbers with
+the respective words recorded in any language via headphones of the XO-hardware .
