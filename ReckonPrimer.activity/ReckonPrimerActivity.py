@@ -1,22 +1,33 @@
 #! -*- coding: utf-8 -*-
 #(c) Stefan Heher 2009
 from time import strftime
+
 import pygtk
 import gtk
+
+from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
 from sugar.activity import activity
 from sugar.datastore import datastore
 from sugar import profile
+
 from session import Session
+
+from toolbar import TestToolbar
 
 class ReckonPrimerActivity(activity.Activity):
 
     def __init__(self, handle):
-    
+        
         activity.Activity.__init__(self, handle)
         """ Create the official Sugar toolbox at the top of the screen"""
         toolbox = activity.ActivityToolbox(self)
         self.set_toolbox(toolbox)
+        
+        test_toolbar = TestToolbar(self, toolbox)
+        toolbox.add_toolbar('Test', test_toolbar)
+        
         toolbox.show()
+
         
         file_location = activity.get_activity_root() + \
                         "/data/reckonprimer_report.txt" 
